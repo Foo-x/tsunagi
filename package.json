@@ -9,6 +9,7 @@
     "quartz": "./quartz/bootstrap-cli.mjs",
     "content": "./quartz/bootstrap-cli.mjs build --serve",
     "docs": "./quartz/bootstrap-cli.mjs build --serve -d docs",
+    "sync": "./quartz/bootstrap-cli.mjs sync",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "prettier . --write",
     "test": "tsx ./quartz/util/path.test.ts && tsx ./quartz/depgraph.test.ts",
