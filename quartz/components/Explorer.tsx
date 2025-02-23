@@ -6,7 +6,7 @@ import script from "./scripts/explorer.inline"
 import { ExplorerNode, FileNode, Options } from "./ExplorerNode"
 import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"
-import { i18n } from "../i18n"
+import Search from "./Search"
 
 // Options interface defined in `ExplorerNode` to avoid circular dependency
 const defaultOptions = {
@@ -36,6 +36,8 @@ const defaultOptions = {
   filterFn: (node) => node.name !== "tags",
   order: ["filter", "map", "sort"],
 } satisfies Options
+
+const ActualSearch = Search()
 
 export default ((userOpts?: Partial<Options>) => {
   // Parse config
@@ -72,13 +74,8 @@ export default ((userOpts?: Partial<Options>) => {
     jsonTree = JSON.stringify(folders)
   }
 
-  const Explorer: QuartzComponent = ({
-    ctx,
-    cfg,
-    allFiles,
-    displayClass,
-    fileData,
-  }: QuartzComponentProps) => {
+  const Explorer: QuartzComponent = (props: QuartzComponentProps) => {
+    const { ctx, allFiles, displayClass, fileData } = props
     if (ctx.buildId !== lastBuildId) {
       lastBuildId = ctx.buildId
       constructFileTree(allFiles)
@@ -125,16 +122,19 @@ export default ((userOpts?: Partial<Options>) => {
           aria-expanded={true}
         ></button>
         <div id="explorer-content">
-          <ul class="overflow" id="explorer-ul">
-            <ExplorerNode node={fileTree} opts={opts} fileData={fileData} />
-            <li id="explorer-end" />
-          </ul>
+          <ActualSearch {...props} />
+          <div>
+            <ul class="overflow" id="explorer-ul">
+              <ExplorerNode node={fileTree} opts={opts} fileData={fileData} />
+              <li id="explorer-end" />
+            </ul>
+          </div>
         </div>
       </div>
     )
   }
 
-  Explorer.css = style
-  Explorer.afterDOMLoaded = script
+  Explorer.css = style + ActualSearch.css
+  Explorer.afterDOMLoaded = script + ActualSearch.afterDOMLoaded
   return Explorer
 }) satisfies QuartzComponentConstructor

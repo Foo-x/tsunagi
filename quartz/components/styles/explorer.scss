@@ -155,7 +155,8 @@ button#desktop-explorer {
     }
   }
 
-  > #explorer-ul {
+  #explorer-ul {
+    margin-top: 24px;
     max-height: none;
   }
 }

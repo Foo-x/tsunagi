@@ -165,19 +165,28 @@ function toggleExplorerFolders() {
   })
 }
 
-window.addEventListener("resize", setupExplorer)
-
-document.addEventListener("nav", () => {
+const initExplorer = () => {
   const explorer = document.querySelector("#mobile-explorer")
   if (explorer) {
     explorer.classList.add("collapsed")
     const content = explorer.nextElementSibling?.nextElementSibling as HTMLElement
     if (content) {
       content.classList.add("collapsed")
-      content.classList.toggle("explorer-viewmode")
+      content.classList.add("explorer-viewmode")
     }
+    // Disable scrolling on the page when the explorer is opened on mobile
+    const bodySelector = document.querySelector("#quartz-body")
+    if (bodySelector) bodySelector.classList.remove("lock-scroll")
   }
   setupExplorer()
+}
+
+window.addEventListener("resize", () => {
+  initExplorer()
+})
+
+document.addEventListener("nav", () => {
+  initExplorer()
 
   observer.disconnect()
 
