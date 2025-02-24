@@ -7,6 +7,7 @@ import { ExplorerNode, FileNode, Options } from "./ExplorerNode"
 import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"
 import Search from "./Search"
+import { compareFile } from "../util/comparator"
 
 // Options interface defined in `ExplorerNode` to avoid circular dependency
 const defaultOptions = {
@@ -17,8 +18,8 @@ const defaultOptions = {
     return node
   },
   sortFn: (a, b) => {
-    // Sort order: folders first, then files. Sort folders and files alphabetically
-    if ((!a.file && !b.file) || (a.file && b.file)) {
+    // Sort order: Sort folders alphabetically
+    if (!a.file && !b.file) {
       // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
       // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
       return a.displayName.localeCompare(b.displayName, undefined, {
@@ -27,6 +28,12 @@ const defaultOptions = {
       })
     }
 
+    // Sort order: Sort files with comparator
+    if (a.file && b.file) {
+      return compareFile(a.file, b.file)
+    }
+
+    // Sort order: folders first, then files.
     if (a.file && !b.file) {
       return 1
     } else {

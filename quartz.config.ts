@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { compareFile } from "./quartz/util/comparator"
 
 /**
  * Quartz 4.0 Configuration
@@ -82,14 +83,11 @@ const config: QuartzConfig = {
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
       Plugin.FolderPage({
-        sort: (a, b) => {
-          return a.slug!.localeCompare(b.slug!, undefined, {
-            numeric: true,
-            sensitivity: "base",
-          })
-        },
+        sort: compareFile,
       }),
-      Plugin.TagPage(),
+      Plugin.TagPage({
+        sort: compareFile,
+      }),
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: false,
