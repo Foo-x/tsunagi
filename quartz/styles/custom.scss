@@ -5,10 +5,8 @@
 
 html {
   scroll-padding-top: 1rem;
-}
 
-@media all and ($mobile) {
-  html {
+  @media all and ($mobile) {
     scroll-padding-top: calc(2rem + 1.75rem + 1rem);
   }
 }

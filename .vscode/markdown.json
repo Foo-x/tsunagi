@@ -1,19 +1,19 @@
 {
-    "frontmatter": {
-        "prefix": "frontmatter",
-        "isFileTemplate": true,
-        "body": [
-            "---",
-            "title: $1",
-            "description: $2",
-            "created: ${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}",
-            "tags:",
-            "    - $3",
-            "aliases:",
-            "    - $4",
-            "---",
-            "",
-            "$0"
-        ]
-    }
+  "frontmatter": {
+    "prefix": "frontmatter",
+    "isFileTemplate": true,
+    "body": [
+      "---",
+      "title: $1",
+      "description: $2",
+      "created: ${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}",
+      "tags:",
+      "    - $3",
+      "aliases:",
+      "    - $4",
+      "---",
+      "",
+      "$0"
+    ]
+  }
 }
