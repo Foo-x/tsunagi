@@ -53,6 +53,13 @@ async function mouseEnterHandler(
 
   const popoverElement = document.createElement("div")
   popoverElement.classList.add("popover")
+  // prevent copying inside popover
+  link.onmouseleave = () => {
+    popoverElement.style.display = "none"
+  }
+  link.onmouseover = () => {
+    popoverElement.style.display = "initial"
+  }
   const popoverInner = document.createElement("div")
   popoverInner.classList.add("popover-inner")
   popoverElement.appendChild(popoverInner)
