@@ -85,9 +85,9 @@ const config: QuartzConfig = {
       Plugin.FolderPage({
         sort: compareFile,
       }),
-      Plugin.TagPage({
-        sort: compareFile,
-      }),
+      // Plugin.TagPage({
+      //   sort: compareFile,
+      // }),
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: false,
