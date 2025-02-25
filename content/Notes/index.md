@@ -1,4 +1,4 @@
 ---
 title: 📝Notes
-description: Notes
+description: ノート一覧
 ---

@@ -1,4 +1,4 @@
 ---
 title: 🔗MOC
-description: Map of Contents
+description: Map of Contents 一覧
 ---
