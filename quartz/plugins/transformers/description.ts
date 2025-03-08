@@ -58,9 +58,8 @@ export const Description: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
               while (currentDescriptionLength < len) {
                 const sentence = sentences[sentenceIdx]
                 if (!sentence) break
-                const currentSentence = sentence.endsWith(".") ? sentence : sentence + "."
-                finalDesc.push(currentSentence)
-                currentDescriptionLength += currentSentence.length
+                finalDesc.push(sentence)
+                currentDescriptionLength += sentence.length
                 sentenceIdx++
               }
             }
