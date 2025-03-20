@@ -15,6 +15,7 @@ description: foo-x のナレッジ置き場
 
 > [!summary] 言語
 >
+> [[Bash|💻Bash]]  
 > [[TypeScript|💻TypeScript]]
 
 [[Notes/index|📝ノート一覧]]
