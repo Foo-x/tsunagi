@@ -37,7 +37,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
     list = list.slice(0, limit)
   }
 
-  return list.map((page) => {
+  return list.filter(page => page.filePath).map((page) => {
     const title = page.frontmatter?.title
     const tags = page.frontmatter?.tags ?? []
 
