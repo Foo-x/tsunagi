@@ -258,6 +258,18 @@ document.addEventListener("prenav", async () => {
   sessionStorage.setItem("explorerScrollTop", explorer.scrollTop.toString())
 })
 
+globalThis.matchMedia("(max-width: 800px)").addEventListener("change", (e) => {
+  const nearestExplorer = document.querySelector(".explorer")
+  if (!nearestExplorer) return
+  if (e.matches) {
+    nearestExplorer.classList.add("collapsed")
+    nearestExplorer.setAttribute("aria-expanded", "false")
+  } else {
+    nearestExplorer.classList.remove("collapsed")
+    nearestExplorer.setAttribute("aria-expanded", "true")
+  }
+})
+
 document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const currentSlug = e.detail.url
   await setupExplorer(currentSlug)

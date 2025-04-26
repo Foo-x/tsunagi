@@ -112,7 +112,7 @@ button.desktop-explorer {
   list-style: none;
   overflow: hidden;
   overflow-y: auto;
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
 
   & ul {
     list-style: none;
@@ -241,9 +241,9 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
       max-width: 100vw;
       width: 100%;
       transform: translateX(-100vw);
-      transition:
-        transform 200ms ease,
-        visibility 200ms ease;
+      /* transition: */
+      /*   transform 200ms ease, */
+      /*   visibility 200ms ease; */
       overflow: hidden;
       padding: 4rem 0 2rem 0;
       height: 100dvh;
