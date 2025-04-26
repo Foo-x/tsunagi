@@ -1,4 +1,4 @@
 ---
 title: プロセス
-description: Map of Contents - プロセス 一覧
+description: Map of Contents - プロセス
 ---
