@@ -1,6 +1,6 @@
 import { FullSlug, isFolderPath, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
-import { Date, getDate } from "./Date"
+import { getDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import { GlobalConfiguration } from "../cfg"
 
@@ -64,43 +64,32 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
     list = list.slice(0, limit)
   }
 
-  return (
-    <ul class="section-ul">
-      {list.map((page) => {
-        const title = page.frontmatter?.title
-        const tags = page.frontmatter?.tags ?? []
+  return list.filter(page => page.filePath).map((page) => {
+    const title = page.frontmatter?.title
+    const tags = page.frontmatter?.tags ?? []
 
-        return (
-          <li class="section-li">
-            <div class="section">
-              <p class="meta">
-                {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
-              </p>
-              <div class="desc">
-                <h3>
-                  <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
-                    {title}
-                  </a>
-                </h3>
-              </div>
-              <ul class="tags">
-                {tags.map((tag) => (
-                  <li>
-                    <a
-                      class="internal tag-link"
-                      href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
-                    >
-                      {tag}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
-        )
-      })}
-    </ul>
-  )
+    return (
+      <div class="section">
+        <div class="desc">
+          <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+            {title}
+          </a>
+        </div>
+        <ul class="tags">
+          {tags.map((tag) => (
+            <li>
+              <a
+                class="internal tag-link"
+                href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
+              >
+                {tag}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  })
 }
 
 PageList.css = `

@@ -121,6 +121,17 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
                   const simple = simplifySlug(full)
                   outgoing.add(simple)
                   node.properties["data-slug"] = full
+
+                  // prefix with emoji if it's a notes link in MOC
+                  if (
+                    file.data.slug?.startsWith("MOC") &&
+                    simple.startsWith("Notes") &&
+                    !node.properties.href.includes("#") &&
+                    node.children.length === 1 &&
+                    node.children[0].type === "text"
+                  ) {
+                    node.children[0].value = `📄${node.children[0].value}`
+                  }
                 }
 
                 // rewrite link internals if prettylinks is on
