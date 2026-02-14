@@ -6,9 +6,6 @@
       "---",
       "title: $1",
       "description: $2",
-      "created: ${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}",
-      "aliases:",
-      "    - $3",
       "---",
       "",
       "$0"
