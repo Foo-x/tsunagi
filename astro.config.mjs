@@ -6,6 +6,9 @@ import starlight from "@astrojs/starlight"
 export default defineConfig({
   site: "https://foo-x.github.io",
   base: "/tsunagi",
+  build: {
+    format: "file",
+  },
   integrations: [
     starlight({
       title: "繋 | tsunagi",
@@ -47,7 +50,10 @@ export default defineConfig({
           label: "ソフトスキル",
           collapsed: true,
           items: [
-            { label: "💬コミュニケーション", link: "moc/soft-skill/communication" },
+            {
+              label: "💬コミュニケーション",
+              link: "moc/soft-skill/communication",
+            },
           ],
         },
         {
