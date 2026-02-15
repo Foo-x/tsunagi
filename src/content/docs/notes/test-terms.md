@@ -1,5 +1,5 @@
 ---
-title: テスト用語
+title: 📄テスト用語
 description: テスト用語まとめ
 ---
 

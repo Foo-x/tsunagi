@@ -1,5 +1,5 @@
 ---
-title: displayプロパティでアニメーション
+title: 📄displayプロパティでアニメーション
 description: displayプロパティでアニメーションする方法
 ---
 

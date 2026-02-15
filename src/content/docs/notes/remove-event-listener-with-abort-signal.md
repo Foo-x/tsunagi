@@ -1,5 +1,5 @@
 ---
-title: AbortSignalでイベントリスナーを取り外す
+title: 📄AbortSignalでイベントリスナーを取り外す
 description: removeEventListener() ではなく AbortSignal でイベントリスナーを取り外す方法
 ---
 

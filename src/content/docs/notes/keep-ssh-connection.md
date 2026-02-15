@@ -1,5 +1,5 @@
 ---
-title: SSH接続を維持
+title: 📄SSH接続を維持
 description: SSH接続を維持する方法
 ---
 
