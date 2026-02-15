@@ -44,6 +44,13 @@ export default defineConfig({
           ],
         },
         {
+          label: "ソフトスキル",
+          collapsed: true,
+          items: [
+            { label: "💬コミュニケーション", link: "moc/soft-skill/communication" },
+          ],
+        },
+        {
           label: "言語",
           collapsed: true,
           items: [
