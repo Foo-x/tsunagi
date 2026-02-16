@@ -50,6 +50,7 @@ export default defineConfig({
           label: "ソフトスキル",
           collapsed: true,
           items: [
+            { label: "🗂️マネジメント", link: "moc/soft-skill/management" },
             {
               label: "💬コミュニケーション",
               link: "moc/soft-skill/communication",

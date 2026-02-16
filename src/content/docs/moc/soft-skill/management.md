@@ -1,0 +1,7 @@
+---
+title: 🗂️マネジメント
+description: マネジメントの Map of Contents
+tableOfContents: false
+---
+
+[📄プロジェクトマネジメント](../../notes/project-management)
