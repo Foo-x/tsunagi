@@ -53,4 +53,4 @@ description: 良いコミュニケーションの仕方について
         - なぜその回答が必要なのか逆に質問して本来の問題Xを特定する
 - 誤謬や詭弁に注意する
     - [誤謬・詭弁](../notes/fallacies-and-sophistry)
-- [良い文章の書き方.md](https://gist.github.com/Foo-x/67044780d9cdbb2b34687ae8dfffe4fe) も参照
+- [良い文章の書き方](../notes/good-writing) も参照
