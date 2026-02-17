@@ -51,6 +51,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "🗂️マネジメント", link: "moc/soft-skill/management" },
+            { label: "💪成長", link: "moc/soft-skill/growth" },
             {
               label: "💬コミュニケーション",
               link: "moc/soft-skill/communication",
