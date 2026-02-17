@@ -4,6 +4,7 @@ description: マネジメントの Map of Contents
 tableOfContents: false
 ---
 
+[📄ドキュメント管理](../../notes/document-management)  
 [📄問題解決](../../notes/problem-solving)  
 [📄プロジェクトマネジメント](../../notes/project-management)  
 [📄リカバリー](../../notes/recovery)
